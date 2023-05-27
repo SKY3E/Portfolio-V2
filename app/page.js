@@ -2,7 +2,7 @@ import Navigation from './components/navigation.js';
 
 export default function Home() {
   return (
-    <main className="">
+    <main className=''>
       <Navigation />
     </main>
   )
