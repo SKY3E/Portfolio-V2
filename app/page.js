@@ -6,12 +6,9 @@ import About from './components/about.js';
 
 export default function Home() {
   const handleScroll = (id) => {
-    console.log(id);
     const targetElement = document.getElementById(id + '-section');
     if (targetElement) {
-      console.log(targetElement);
       const targetPosition = targetElement.getBoundingClientRect().top;
-      console.log(targetPosition);
       window.scrollTo({
         top: targetPosition - 100,
         behavior: 'smooth',
@@ -22,7 +19,7 @@ export default function Home() {
   return (
     <main className='h-96'>
       <Navigation handleScroll={handleScroll}/>
-      <Header />
+      <Header handleScroll={handleScroll}/>
       <About />
     </main>
   )

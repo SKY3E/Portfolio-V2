@@ -5,6 +5,20 @@ import { useState, useEffect } from 'react';
 
 export default function About() {
   const isXLargeScreen = useMediaQuery('(min-width: 1280px)');
+
+  const tiltSection = (event, sectionId) => {
+    const section = document.getElementById(sectionId);
+    const xPos = event.clientX;
+    const yPos = event.clientY;
+    const xTilt = (window.innerWidth / 2 - xPos) / (window.innerWidth / 4) * 10;
+    const yTilt = (window.innerHeight / 2 - yPos) / (window.innerHeight / 4) * 10;
+    section.style.transform = `perspective(1000px) rotateX(${yTilt}deg) rotateY(${xTilt}deg)`;
+  };
+
+  const resetSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    section.style.transform = 'none';
+  };
   
   return (
     <section id='about-section' className='-mt-60 lg:ml-[calc(60.00vw-50.00%)] lg:mr-[calc(60.00vw-50.00%)] h-vh-screen'>
@@ -15,7 +29,12 @@ export default function About() {
             I first started coding in 2021, at 14 years old. I started with a python course. However, I quickly moved on to work on my own projects, and started learning Unity & C# to make games. A bit later I decided to go into Web Development, and since then I've worked on over 10 projects, learned various languages, and decided to pursue Computer Science as a career.
           </p>
           <div className="mb-4 flex space-x-2">
-            <div className="w-1/2 h-36 px-4 py-2 bg-gray-100 border-gray-200 border-2 rounded">
+            <div 
+              id='nat-languages-article'
+              className="w-1/2 h-36 px-4 py-2 bg-white hover:shadow-lg border-gray-200 border-2 rounded"
+              onMouseMove={(e) => tiltSection(e, 'nat-languages-article')}
+              onMouseLeave={() => resetSection('nat-languages-article')}
+            >
               Natural Languages: <br />
               <ul className="list-disc list-inside">
                 <li>French</li>
@@ -23,7 +42,12 @@ export default function About() {
                 <li>German (Limited Proficiency)</li>
               </ul>
             </div>
-            <div className="w-1/2 h-36 px-4 py-2 bg-gray-100 border-gray-200 border-2 rounded">
+            <div
+              id='prog-languages-article'
+              className="w-1/2 h-36 px-4 py-2 bg-white hover:shadow-lg border-gray-200 border-2 rounded"
+              onMouseMove={(e) => tiltSection(e, 'prog-languages-article')}
+              onMouseLeave={() => resetSection('prog-languages-article')}
+            >
               Programming Languages: <br />
               <ul className="list-disc list-inside">
                 <li>Javascript</li>
@@ -32,7 +56,12 @@ export default function About() {
               </ul>
             </div>
           </div>
-          <div className="w-full h-36 px-4 py-2 bg-gray-100 border-gray-200 border-2 rounded">
+          <div 
+            id='stack-article'
+            className="w-full h-36 px-4 py-2 bg-white hover:shadow-lg border-gray-200 border-2 rounded"
+            onMouseMove={(e) => tiltSection(e, 'stack-article')}
+            onMouseLeave={() => resetSection('stack-article')}
+          >
             Personal Tech Stack: <br />
             <ul className="list-disc list-inside">
               <li>Next.js</li>
@@ -42,9 +71,11 @@ export default function About() {
             </ul>
           </div>
         </article>
-        {isXLargeScreen && <article className="xl:w-6/12 font-semibold flex justify-center items-center">
-          <img src="ProfilePic.jpg" alt="Profile Picture" className="h-5/6 rounded-full border-gray-200 border-4 rounded" />
-        </article>}
+        {isXLargeScreen && 
+          <article className="xl:w-6/12 font-semibold flex justify-center items-center">
+            <img src="ProfilePic.jpg" alt="Profile Picture" className="h-5/6 hover:shadow-lg rounded-full border-gray-200 border-4 rounded" />
+          </article>
+        }
       </div>
     </section>
   )
