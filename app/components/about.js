@@ -1,17 +1,21 @@
 'use client';
 
 import { useMediaQuery } from '@react-hook/media-query';
-import { useState, useEffect } from 'react';
 
 export default function About() {
   const isXLargeScreen = useMediaQuery('(min-width: 1280px)');
 
   const tiltSection = (event, sectionId) => {
     const section = document.getElementById(sectionId);
+    const sectionRect = section.getBoundingClientRect();
+    const sectionCenterX = sectionRect.left + sectionRect.width / 2;
+    const sectionCenterY = sectionRect.top + sectionRect.height / 2;
     const xPos = event.clientX;
     const yPos = event.clientY;
-    const xTilt = (window.innerWidth / 2 - xPos) / (window.innerWidth / 4) * 10;
-    const yTilt = (window.innerHeight / 2 - yPos) / (window.innerHeight / 4) * 10;
+    const distanceFromCenterX = xPos - sectionCenterX;
+    const distanceFromCenterY = yPos - sectionCenterY;
+    const xTilt = (distanceFromCenterX / sectionRect.width) * 10;
+    const yTilt = (distanceFromCenterY / sectionRect.height) * 10;
     section.style.transform = `perspective(1000px) rotateX(${yTilt}deg) rotateY(${xTilt}deg)`;
   };
 
