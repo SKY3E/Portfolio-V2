@@ -7,9 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
+      height: {
+        'vh-screen': '100vh',
       },
     },
   },
+  variants: {},
   plugins: [],
 }

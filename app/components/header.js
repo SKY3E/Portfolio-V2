@@ -1,7 +1,7 @@
 export default function Header(){
 
   return (
-    <section id='header-section' className='mt-60 ml-[calc(60.00vw-50.00%)]'>
+    <section id='header-section' className='mt-60 ml-[calc(60.00vw-50.00%)] h-vh-screen'>
       <h2 className='text-xl font-semibold mb-4'>Hi, my name is</h2>
       <h1 className='text-5xl font-bold mb-2'>Raphael Bessin</h1>
       <h1 className='text-5xl font-bold mb-4'>I develop the future of the Web.</h1>

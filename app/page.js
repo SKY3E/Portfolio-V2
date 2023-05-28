@@ -2,8 +2,7 @@
 
 import Navigation from './components/navigation.js';
 import Header from './components/header.js';
-
-import { useRef } from 'react';
+import About from './components/about.js';
 
 export default function Home() {
   const handleScroll = (id) => {
@@ -14,7 +13,7 @@ export default function Home() {
       const targetPosition = targetElement.getBoundingClientRect().top;
       console.log(targetPosition);
       window.scrollTo({
-        top: targetPosition,
+        top: targetPosition - 100,
         behavior: 'smooth',
       });
     }
@@ -24,8 +23,7 @@ export default function Home() {
     <main className='h-96'>
       <Navigation handleScroll={handleScroll}/>
       <Header />
-      <h1 className='mt-96 mb-96'>Hello</h1>
-      <h1 className='mt-96 mb-96'>Hello</h1>
+      <About />
     </main>
   )
 }
