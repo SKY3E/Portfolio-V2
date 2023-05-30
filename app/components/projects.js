@@ -38,17 +38,33 @@ export default function Projects() {
       id: 3,
       title: 'Personal Website (V2.0)',
       image: 'PersonalWebsite.png',
-      description: 'A website I created to showcase my skills, projects and goals for the future as I start to look at opportunities for me to develop my skills.',
+      description: 'A website I created to showcase my skills, projects and goals for the future as I start to look at opportunities for me to develop my skills, except version 2.',
       featured: true,
       type: 'web',
     },
     {
       id: 4,
-      title: '',
-      image: '',
-      description: '',
+      title: 'Personal Website (V1.0)',
+      image: 'PersonalWebsiteOld.png',
+      description: 'A website I created to showcase my skills, projects and goals for the future as I start to look at opportunities for me to develop my skills.',
       featured: false,
-      type: '',
+      type: 'web',
+    },
+    {
+      id: 5,
+      title: 'Open Calendar',
+      image: 'CalendarWebsite.png',
+      description: 'A website to view (by day, week, or month), edit, create and delete items in your calendar.',
+      featured: false,
+      type: 'web',
+    },
+    {
+      id: 6,
+      title: 'Study Tab',
+      image: 'StudyTab.png',
+      description: 'A website to maximaze your efficiency, productivity, & work day with various widgets, which are all fully customizable through a menu.',
+      featured: false,
+      type: 'web',
     }
   ];
 
@@ -64,16 +80,18 @@ export default function Projects() {
     <section id='projects-section' className='-mt-24 lg:ml-[calc(60.00vw-50.00%)] lg:mr-[calc(60.00vw-50.00%)] h-vh-screen'>
       <h2 className='text-2xl font-semibold mb-4'>Projects</h2>
       <article className="">
-        <div className="px-2 flex space-x-4 justify-center bg-white border-gray-200 border-2 rounded">
+        <div className="px-2 flex space-x-4 justify-center bg-white border-gray-200 border-2 rounded mb-4">
           <button onClick={handleTabChange} id='featured' className={`hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 ${projectTab === 'featured' ? 'text-blue-500' : ''}`}>Featured</button>
           <button onClick={handleTabChange} id='web' className={`hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 ${projectTab === 'web' ? 'text-blue-500' : ''}`}>Web Dev</button>
           <button onClick={handleTabChange} id='game' className={`hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 ${projectTab === 'game' ? 'text-blue-500' : ''}`}>Game Dev</button>
         </div>
         <div className="w-full flex items-center justify-center grid grid-cols-3 gap-4">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="bg-white border-gray-200 border-2 rounded p-4 my-2">
+            <div key={project.id} className="bg-white border-gray-200 border-2 rounded p-4">
               <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
-              <img className="rounded mb-1" src={project.image} alt={project.title}></img>
+              <div className='h-44'>
+                <img className="rounded mb-1" src={project.image} alt={project.title}></img>
+              </div>
               {showText[project.id] ? (
                 <div>
                   <p className="text-gray-700 text-opacity-60 font-semibold">{project.description}</p>
