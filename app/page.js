@@ -3,6 +3,7 @@
 import Navigation from './components/navigation.js';
 import Header from './components/header.js';
 import About from './components/about.js';
+import Projects from './components/projects.js';
 
 export default function Home() {
   const handleScroll = (id) => {
@@ -21,6 +22,7 @@ export default function Home() {
       <Navigation handleScroll={handleScroll}/>
       <Header handleScroll={handleScroll}/>
       <About />
+      <Projects />
     </main>
   )
 }

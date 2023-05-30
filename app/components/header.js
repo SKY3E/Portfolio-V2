@@ -1,4 +1,4 @@
-export default function Header({ handleScroll }){
+export default function Header({ handleScroll }) {
   const handleScrollClick = (e) => {
     handleScroll(e.target.id);
   };
