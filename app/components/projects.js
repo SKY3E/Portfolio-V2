@@ -22,6 +22,7 @@ export default function Projects() {
       id: 1,
       title: 'The Ocean Scout',
       image: '/projects/OceanScout.png',
+      skills: ['nextjs.png', 'js.png', 'tailwind.png', 'firebase.png', 'vercel.png'],
       description: 'The Ocean Scout is a scouting tool for FIRST Tech Challenge allowing for efficient collection, analysis, and reviewal of data to gain a competitive edge.',
       featured: true,
       type: 'web',
@@ -30,7 +31,8 @@ export default function Projects() {
       id: 2,
       title: 'Ecosim',
       image: null,
-      description: 'Ecosim is a Unity environment simulation project I created to observe species evolving as time goes by.',
+      skills: ['unity.png'],
+      description: 'Ecosim is a Unity environment simulation project I created to observe species evolving, passing on genes, & surviving in a competitive environment.',
       featured: true,
       type: 'game',
     },
@@ -38,6 +40,7 @@ export default function Projects() {
       id: 3,
       title: 'Personal Website (V2.0)',
       image: '/projects/PersonalWebsite.png',
+      skills: ['nextjs.png', 'js.png', 'tailwind.png', 'vercel.png'],
       description: 'A website I created to showcase my skills, projects and goals for the future as I start to look at opportunities for me to develop my skills, except version 2.',
       featured: true,
       type: 'web',
@@ -46,6 +49,7 @@ export default function Projects() {
       id: 4,
       title: 'Personal Website (V1.0)',
       image: '/projects/PersonalWebsiteOld.png',
+      skills: ['html.png', 'css.png', 'js.png'],
       description: 'A website I created to showcase my skills, projects and goals for the future as I start to look at opportunities for me to develop my skills.',
       featured: false,
       type: 'web',
@@ -54,6 +58,7 @@ export default function Projects() {
       id: 5,
       title: 'Open Calendar',
       image: '/projects/CalendarWebsite.png',
+      skills: ['nextjs.png', 'js.png', 'tailwind.png', 'firebase.png', 'vercel.png'],
       description: 'A website to view (by day, week, or month), edit, create and delete items in your calendar.',
       featured: false,
       type: 'web',
@@ -62,6 +67,7 @@ export default function Projects() {
       id: 6,
       title: 'Study Tab',
       image: '/projects/StudyTab.png',
+      skills: ['html.png', 'css.png', 'js.png'],
       description: 'A website to maximaze your efficiency, productivity, & work day with various widgets, which are all fully customizable through a menu.',
       featured: false,
       type: 'web',
@@ -87,18 +93,31 @@ export default function Projects() {
         </div>
         <div className="w-full flex items-center justify-center grid grid-cols-3 gap-4">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="bg-white border-gray-200 border-2 rounded p-4">
+            <div key={project.id} className="hover:shadow-lg bg-white border-gray-200 border-2 rounded p-4">
               <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
               <div className='h-44'>
                 <img className="rounded mb-1" src={project.image} alt={project.title}></img>
               </div>
               {showText[project.id] ? (
                 <div>
+                  <div className='flex justify-between'>
+                    <button onClick={() => handleSeeMore(project.id)} className='hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 text-blue-500'>See Less</button>
+                    <div className='flex items-center space-x-2'>
+                      {project.skills.length > 0 ? (
+                        <>
+                          {project.skills.map((skill, index) => (
+                            <div key={index} className="w-8 h-8 overflow-hidden">
+                              <img className='w-full h-full object-cover' src={`/skills/${skill}`} alt={skill} />
+                            </div>
+                          ))}
+                        </>
+                      ) : null}
+                    </div>
+                  </div>
                   <p className="text-gray-700 text-opacity-60 font-semibold">{project.description}</p>
-                  <button onClick={() => handleSeeMore(project.id)} className="text-blue-500 hover:underline">See Less</button>
                 </div>
               ) : (
-                <button onClick={() => handleSeeMore(project.id)} className="text-blue-500 hover:underline">See More</button>
+                <button onClick={() => handleSeeMore(project.id)} className='hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2'>See More</button>
               )}
             </div>
           ))}
