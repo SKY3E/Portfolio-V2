@@ -4,6 +4,7 @@ import Navigation from './components/navigation.js';
 import Header from './components/header.js';
 import About from './components/about.js';
 import Projects from './components/projects.js';
+import Skills from './components/skills.js';
 
 export default function Home() {
   const handleScroll = (id) => {
@@ -23,6 +24,7 @@ export default function Home() {
       <Header handleScroll={handleScroll}/>
       <About />
       <Projects />
+      <Skills />
     </main>
   )
 }

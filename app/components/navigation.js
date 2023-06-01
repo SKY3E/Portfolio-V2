@@ -16,6 +16,9 @@ export default function Navigation({ handleScroll }) {
         <button onClick={handleScrollClick} id='projects' className="flex items-center justify-center px-6 py-2 rounded border-gray-200 border-2 bg-white font-extrabold">
           Projects
         </button>
+        <button onClick={handleScrollClick} id='skills' className="flex items-center justify-center px-6 py-2 rounded border-gray-200 border-2 bg-white font-extrabold">
+          Skills
+        </button>
       </section>
     </nav>
   )

@@ -21,7 +21,7 @@ export default function Projects() {
     {
       id: 1,
       title: 'The Ocean Scout',
-      image: 'OceanScout.png',
+      image: '/projects/OceanScout.png',
       description: 'The Ocean Scout is a scouting tool for FIRST Tech Challenge allowing for efficient collection, analysis, and reviewal of data to gain a competitive edge.',
       featured: true,
       type: 'web',
@@ -37,7 +37,7 @@ export default function Projects() {
     {
       id: 3,
       title: 'Personal Website (V2.0)',
-      image: 'PersonalWebsite.png',
+      image: '/projects/PersonalWebsite.png',
       description: 'A website I created to showcase my skills, projects and goals for the future as I start to look at opportunities for me to develop my skills, except version 2.',
       featured: true,
       type: 'web',
@@ -45,7 +45,7 @@ export default function Projects() {
     {
       id: 4,
       title: 'Personal Website (V1.0)',
-      image: 'PersonalWebsiteOld.png',
+      image: '/projects/PersonalWebsiteOld.png',
       description: 'A website I created to showcase my skills, projects and goals for the future as I start to look at opportunities for me to develop my skills.',
       featured: false,
       type: 'web',
@@ -53,7 +53,7 @@ export default function Projects() {
     {
       id: 5,
       title: 'Open Calendar',
-      image: 'CalendarWebsite.png',
+      image: '/projects/CalendarWebsite.png',
       description: 'A website to view (by day, week, or month), edit, create and delete items in your calendar.',
       featured: false,
       type: 'web',
@@ -61,7 +61,7 @@ export default function Projects() {
     {
       id: 6,
       title: 'Study Tab',
-      image: 'StudyTab.png',
+      image: '/projects/StudyTab.png',
       description: 'A website to maximaze your efficiency, productivity, & work day with various widgets, which are all fully customizable through a menu.',
       featured: false,
       type: 'web',
@@ -77,7 +77,7 @@ export default function Projects() {
   });
 
   return (
-    <section id='projects-section' className='-mt-24 lg:ml-[calc(60.00vw-50.00%)] lg:mr-[calc(60.00vw-50.00%)] h-vh-screen'>
+    <section id='projects-section' className='lg:ml-[calc(60.00vw-50.00%)] lg:mr-[calc(60.00vw-50.00%)] mb-36'>
       <h2 className='text-2xl font-semibold mb-4'>Projects</h2>
       <article className="">
         <div className="px-2 flex space-x-4 justify-center bg-white border-gray-200 border-2 rounded mb-4">

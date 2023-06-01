@@ -2,6 +2,7 @@
 
 import { useMediaQuery } from '@react-hook/media-query';
 import { useState, useEffect } from "react";
+import { tiltSection, resetSection } from '../lib/ui';
 
 export default function About() {
   const isXLargeScreen = useMediaQuery('(min-width: 1280px)');
@@ -10,30 +11,11 @@ export default function About() {
   useEffect(() => {
     setDomLoaded(true);
   }, []);
-
-  const tiltSection = (event, sectionId) => {
-    const section = document.getElementById(sectionId);
-    const sectionRect = section.getBoundingClientRect();
-    const sectionCenterX = sectionRect.left + sectionRect.width / 2;
-    const sectionCenterY = sectionRect.top + sectionRect.height / 2;
-    const xPos = event.clientX;
-    const yPos = event.clientY;
-    const distanceFromCenterX = xPos - sectionCenterX;
-    const distanceFromCenterY = yPos - sectionCenterY;
-    const xTilt = (distanceFromCenterX / sectionRect.width) * 10;
-    const yTilt = (distanceFromCenterY / sectionRect.height) * 10;
-    section.style.transform = `perspective(1000px) rotateX(${yTilt}deg) rotateY(${xTilt}deg)`;
-  };
-
-  const resetSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    section.style.transform = 'none';
-  };
   
   return (
     <>
       {domLoaded && (
-        <section id='about-section' className='-mt-60 lg:ml-[calc(60.00vw-50.00%)] lg:mr-[calc(60.00vw-50.00%)] h-vh-screen'>
+        <section id='about-section' className='lg:ml-[calc(60.00vw-50.00%)] lg:mr-[calc(60.00vw-50.00%)] mb-36'>
           <h2 className='text-2xl font-semibold mb-4'>About Me</h2>
           <div className="xl:flex">
             <article className="xl:w-6/12 font-semibold">
