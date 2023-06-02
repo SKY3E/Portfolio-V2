@@ -23,30 +23,31 @@ export default function About() {
                 I first started coding in 2021, at 14 years old. I started with a python course. However, I quickly moved on to work on my own projects, and started learning Unity & C# to make games. A bit later I decided to go into Web Development, and since then I've worked on over 10 projects, learned various languages, and decided to pursue Computer Science as a career.
               </p>
               <div className="mb-4 flex space-x-2">
-                <div 
-                  id='nat-languages-article'
+                <div
+                  id='interests-article'
                   className="w-1/2 h-36 px-4 py-2 bg-white hover:shadow-lg border-gray-200 border-2 rounded"
-                  onMouseMove={(e) => tiltSection(e, 'nat-languages-article')}
-                  onMouseLeave={() => resetSection('nat-languages-article')}
+                  onMouseMove={(e) => tiltSection(e, 'interests-article')}
+                  onMouseLeave={() => resetSection('interests-article')}
                 >
-                  Natural Languages: <br />
+                  Interests: <br />
+                  <ul className="list-disc list-inside">
+                    <li>Programming</li>
+                    <li>Skiing & Soccer</li>
+                    <li>Video Games</li>
+                    <li>Sudoku</li>
+                  </ul>
+                </div>
+                <div 
+                  id='languages-article'
+                  className="w-1/2 h-36 px-4 py-2 bg-white hover:shadow-lg border-gray-200 border-2 rounded"
+                  onMouseMove={(e) => tiltSection(e, 'languages-article')}
+                  onMouseLeave={() => resetSection('languages-article')}
+                >
+                  Languages: <br />
                   <ul className="list-disc list-inside">
                     <li>French</li>
                     <li>English</li>
                     <li>German (Limited Proficiency)</li>
-                  </ul>
-                </div>
-                <div
-                  id='prog-languages-article'
-                  className="w-1/2 h-36 px-4 py-2 bg-white hover:shadow-lg border-gray-200 border-2 rounded"
-                  onMouseMove={(e) => tiltSection(e, 'prog-languages-article')}
-                  onMouseLeave={() => resetSection('prog-languages-article')}
-                >
-                  Programming Languages: <br />
-                  <ul className="list-disc list-inside">
-                    <li>Javascript</li>
-                    <li>Python</li>
-                    <li>C#</li>
                   </ul>
                 </div>
               </div>
