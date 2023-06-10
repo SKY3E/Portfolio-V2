@@ -86,38 +86,64 @@ export default function Projects() {
     <section id='projects-section' className='lg:ml-[calc(60.00vw-50.00%)] lg:mr-[calc(60.00vw-50.00%)] mb-36'>
       <h2 className='text-2xl font-semibold mb-4'>Projects</h2>
       <article className="">
-        <div className="px-2 flex space-x-4 justify-center bg-white border-gray-200 border-2 rounded mb-4">
-          <button onClick={handleTabChange} id='featured' className={`hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 ${projectTab === 'featured' ? 'text-blue-500' : ''}`}>Featured</button>
-          <button onClick={handleTabChange} id='web' className={`hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 ${projectTab === 'web' ? 'text-blue-500' : ''}`}>Web Dev</button>
-          <button onClick={handleTabChange} id='game' className={`hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 ${projectTab === 'game' ? 'text-blue-500' : ''}`}>Game Dev</button>
+        <div className="px-2 flex flex-wrap justify-center bg-white border-gray-200 border-2 rounded mb-4">
+          <button
+            onClick={handleTabChange}
+            id='featured'
+            className={`hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 text-xs md:text-base ${projectTab === 'featured' ? 'text-blue-500' : ''}`}
+          >
+            Featured
+          </button>
+          <button
+            onClick={handleTabChange}
+            id='web'
+            className={`hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 text-xs md:text-base ${projectTab === 'web' ? 'text-blue-500' : ''}`}
+          >
+            Web Dev
+          </button>
+          <button
+            onClick={handleTabChange}
+            id='game'
+            className={`hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 text-xs md:text-base ${projectTab === 'game' ? 'text-blue-500' : ''}`}
+          >
+            Game Dev
+          </button>
         </div>
-        <div className="w-full flex items-center justify-center grid grid-cols-3 gap-4">
+        <div className="grid gap-4 md:grid-cols-3">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="hover:shadow-lg bg-white border-gray-200 border-2 rounded p-4">
+            <div key={project.id} className="hover:shadow-lg bg-white border-gray-200 border-2 rounded p-4 mb-4">
               <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
               <div className='h-44'>
-                <img className="rounded mb-1" src={project.image} alt={project.title}></img>
+                {project.image && (
+                  <img className="rounded mb-1 w-full h-full object-cover" src={project.image} alt={project.title} />
+                )}
               </div>
               {showText[project.id] ? (
                 <div>
                   <div className='flex justify-between'>
-                    <button onClick={() => handleSeeMore(project.id)} className='hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 text-blue-500'>See Less</button>
+                    <button
+                      onClick={() => handleSeeMore(project.id)}
+                      className='hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 text-blue-500'
+                    >
+                      See Less
+                    </button>
                     <div className='flex items-center space-x-2'>
-                      {project.skills.length > 0 ? (
-                        <>
-                          {project.skills.map((skill, index) => (
-                            <div key={index} className="w-8 h-8 overflow-hidden">
-                              <img className='w-full h-full object-cover' src={`/skills/${skill}`} alt={skill} />
-                            </div>
-                          ))}
-                        </>
-                      ) : null}
+                      {project.skills.length > 0 && project.skills.map((skill, index) => (
+                        <div key={index} className="w-8 h-8 overflow-hidden">
+                          <img className='w-full h-full object-cover' src={`/skills/${skill}`} alt={skill} />
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <p className="text-gray-700 text-opacity-60 font-semibold">{project.description}</p>
                 </div>
               ) : (
-                <button onClick={() => handleSeeMore(project.id)} className='hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2'>See More</button>
+                <button
+                  onClick={() => handleSeeMore(project.id)}
+                  className='hover:shadow-lg bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2'
+                >
+                  See More
+                </button>
               )}
             </div>
           ))}

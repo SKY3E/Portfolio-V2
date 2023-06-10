@@ -17,7 +17,7 @@ export default function About() {
       {domLoaded && (
         <section id='about-section' className='lg:ml-[calc(60.00vw-50.00%)] lg:mr-[calc(60.00vw-50.00%)] mb-36'>
           <h2 className='text-2xl font-semibold mb-4'>About Me</h2>
-          <div className="xl:flex">
+          <div className="xl:flex text-sm md:text-base">
             <article className="xl:w-6/12 font-semibold">
               <p className="mb-4">
                 I first started coding in 2021, at 14 years old. I started with a python course. However, I quickly moved on to work on my own projects, and started learning Unity & C# to make games. A bit later I decided to go into Web Development, and since then I've worked on over 10 projects, learned various languages, and decided to pursue Computer Science as a career.
