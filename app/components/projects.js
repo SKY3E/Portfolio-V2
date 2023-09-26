@@ -112,7 +112,7 @@ export default function Projects() {
         <div className="grid gap-4 md:grid-cols-1">
           {filteredProjects.map((project) => (
             <div key={project.id} className='flex flex-row hover:shadow-lg bg-white border-gray-200 border-2 rounded p-4 mb-4'>
-              <div className="w-full md:w-1/3">
+              <div className="w-full md:w-1/3 mr-8">
                 <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
                 <div className='h-44'>
                   {project.image && (
