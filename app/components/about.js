@@ -2,7 +2,6 @@
 
 import { useMediaQuery } from '@react-hook/media-query';
 import { useState, useEffect } from "react";
-import { tiltSection, resetSection } from '../lib/ui';
 
 export default function About() {
   const isXLargeScreen = useMediaQuery('(min-width: 1280px)');
