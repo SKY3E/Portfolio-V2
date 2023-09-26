@@ -14,7 +14,7 @@ export default function About() {
   return (
     <>
       {domLoaded && (
-        <section id='about-section' className='lg:ml-[calc(60.00vw-50.00%)] lg:mr-[calc(60.00vw-50.00%)] mb-36'>
+        <section id='about-section' className='lg:ml-[calc(60.00vw-50.00%)] lg:mr-[calc(60.00vw-50.00%)]'>
           <h2 className='text-2xl font-semibold mb-4'>About Me</h2>
           <div className="xl:flex text-sm md:text-base">
             <article className="xl:w-6/12 font-semibold">
@@ -25,8 +25,6 @@ export default function About() {
                 <div
                   id='interests-article'
                   className="w-1/2 h-36 px-4 py-2 bg-white hover:shadow-lg border-gray-200 border-2 rounded"
-                  onMouseMove={(e) => tiltSection(e, 'interests-article')}
-                  onMouseLeave={() => resetSection('interests-article')}
                 >
                   Interests: <br />
                   <ul className="list-disc list-inside">
@@ -39,8 +37,6 @@ export default function About() {
                 <div 
                   id='languages-article'
                   className="w-1/2 h-36 px-4 py-2 bg-white hover:shadow-lg border-gray-200 border-2 rounded"
-                  onMouseMove={(e) => tiltSection(e, 'languages-article')}
-                  onMouseLeave={() => resetSection('languages-article')}
                 >
                   Languages: <br />
                   <ul className="list-disc list-inside">
@@ -53,8 +49,6 @@ export default function About() {
               <div 
                 id='stack-article'
                 className="w-full h-36 px-4 py-2 bg-white hover:shadow-lg border-gray-200 border-2 rounded"
-                onMouseMove={(e) => tiltSection(e, 'stack-article')}
-                onMouseLeave={() => resetSection('stack-article')}
               >
                 Personal Tech Stack: <br />
                 <ul className="list-disc list-inside">
