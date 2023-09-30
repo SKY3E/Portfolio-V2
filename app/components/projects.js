@@ -59,7 +59,7 @@ export default function Projects() {
       title: 'Open Calendar',
       image: '/projects/CalendarWebsite.png',
       skills: ['nextjs.png', 'js.png', 'tailwind.png', 'firebase.png', 'vercel.png'],
-      description: 'A website to view (by day, week, or month) tasks, edit them, create new ones and delete them all in an integrated calendar.',
+      description: 'A website to view tasks (by day, week, or month), edit them, create new ones and delete them all in an integrated calendar.',
       featured: false,
       type: 'web',
     },
