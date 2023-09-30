@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+
   async function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -19,6 +23,11 @@ export default function Contact() {
     const result = await response.json();
     if (result.success) {
         console.log(result);
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 3000);
+        event.target.reset();
     }
   }
 
@@ -44,6 +53,11 @@ export default function Contact() {
           <textarea className='rounded bg-gray-100 border-gray-200 border-2 px-4 py-2 mb-2' name="message" placeholder="Type your message here."></textarea>
           <button className='rounded text-white bg-green-700 border-green-800 border-2 hover:bg-green-600 hover:border-green-700 px-4 py-2 mb-2' type="submit">Submit Form</button>
         </form>
+        {submitted && (
+          <div className="bg-white border-gray-200 border-2 rounded shadow-lg p-2 absolute top-32 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <p className="text-green-700 font-semibold">Email sent successfully!</p>
+          </div>
+        )}
         <div className="w-1/2">
           <h2 className="text-3xl font-bold mb-1">Got a question?</h2>
           <h3 className="text-3xl font-semibold mt-1">Just reach out.</h3>
