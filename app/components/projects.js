@@ -83,7 +83,7 @@ export default function Projects() {
   });
 
   return (
-    <section id='projects-section' className='lg:ml-[calc(60.00vw-50.00%)] lg:mr-[calc(60.00vw-50.00%)] mb-36'>
+    <section id='projects-section' className='lg:ml-[calc(60.00vw-50.00%)] lg:mr-[calc(60.00vw-50.00%)] mb-12'>
       <h2 className='text-2xl font-semibold mb-4'>Projects</h2>
       <article className="">
         <div className="px-2 gap-2 flex flex-wrap justify-center bg-white border-gray-200 border-2 rounded mb-4">

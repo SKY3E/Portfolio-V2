@@ -8,16 +8,16 @@ export default function Navigation() {
         R
       </Link>
       <section className="flex space-x-2">
-        <Link href="/about" className="flex items-center justify-center bg-gray-100 hover:shadow-lg border-gray-200 border-2 rounded px-4 py-2">
+        <Link href="/about" className="flex items-center justify-center bg-gray-100 hover:shadow-lg hover:text-blue-500 border-gray-200 border-2 rounded px-4 py-2">
           About
         </Link>
-        <Link href="/projects" className="flex items-center justify-center bg-gray-100 hover:shadow-lg border-gray-200 border-2 rounded px-4 py-2">
+        <Link href="/projects" className="flex items-center justify-center bg-gray-100 hover:shadow-lg hover:text-blue-500 border-gray-200 border-2 rounded px-4 py-2">
           Projects
         </Link>
-        <Link href="/skills" className="flex items-center justify-center bg-gray-100 hover:shadow-lg border-gray-200 border-2 rounded px-4 py-2">
+        <Link href="/skills" className="flex items-center justify-center bg-gray-100 hover:shadow-lg hover:text-blue-500 border-gray-200 border-2 rounded px-4 py-2">
           Skills
         </Link>
-        <Link href="/contact" className="flex items-center justify-center bg-gray-100 hover:shadow-lg border-gray-200 border-2 rounded px-4 py-2">
+        <Link href="/contact" className="flex items-center justify-center bg-gray-100 hover:shadow-lg hover:text-blue-500 border-gray-200 border-2 rounded px-4 py-2">
           Contact
         </Link>
       </section>
