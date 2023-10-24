@@ -97,33 +97,6 @@ export default function About() {
                     <img className='rounded h-10' src='/skills/git.png'></img>
                   </div>
                 </div>
-                <div className="px-2 flex bg-white border-gray-200 border-2 rounded mb-2 justify-between">
-                  <h3 className='bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 text-xs md:text-base'>Website & Code Design :</h3>
-                  <div className='flex items-center justify-center gap-2'>
-                    <img className='rounded h-10' src='/skills/prettier.png'></img>
-                    <img className='rounded h-10' src='/skills/figma.png'></img>
-                  </div>
-                </div>
-                <div className="px-2 flex bg-white border-gray-200 border-2 rounded mb-2 justify-between">
-                  <h3 className='bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 text-xs md:text-base'>Deployment :</h3>
-                  <div className='flex items-center justify-center gap-2'>
-                    <img className='rounded h-10' src='/skills/githubactions.png'></img>
-                    <img className='rounded h-10' src='/skills/vercel.png'></img>
-                  </div>
-                </div>
-                <div className="px-2 flex bg-white border-gray-200 border-2 rounded mb-2 justify-between">
-                  <h3 className='bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 text-xs md:text-base'>Art Design :</h3>
-                  <div className='flex items-center justify-center gap-2'>
-                    <img className='rounded h-10' src='/skills/blender.png'></img>
-                    <img className='rounded h-10' src='/skills/aseprite.png'></img>
-                  </div>
-                </div>
-                <div className="px-2 flex bg-white border-gray-200 border-2 rounded mb-2 justify-between">
-                  <h3 className='bg-gray-100 border-gray-200 border-2 rounded px-4 py-2 mt-2 mb-2 text-xs md:text-base'>Game Engines :</h3>
-                  <div className='flex items-center justify-center gap-2'>
-                    <img className='rounded h-10' src='/skills/unity.png'></img>
-                  </div>
-                </div>
               </div>
               <p className="p-2 bg-white border-gray-200 border-2 rounded mb-4">
                 Other technologies I use include <span className='font-bold'>prettier</span> <span className='inline-block align-text-bottom'><img className='h-4 rounded' src='/skills/prettier.png'></img></span> and <span className='font-bold'>figma</span> <span className='inline-block align-text-bottom'><img className='h-4 rounded' src='/skills/figma.png'></img></span> to organize my code and design, <span className='font-bold'>github pages</span> <span className='inline-block align-text-bottom'><img className='h-4 rounded' src='/skills/githubactions.png'></img></span> and <span className='font-bold'>vercel</span> <span className='inline-block align-text-bottom'><img className='h-4 rounded' src='/skills/vercel.png'></img></span> to deploy, <span className='font-bold'>blender</span> <span className='inline-block align-text-bottom'><img className='h-4 rounded' src='/skills/blender.png'></img></span> and <span className='font-bold'>aseprite</span> <span className='inline-block align-text-bottom'><img className='h-4 rounded' src='/skills/aseprite.png'></img></span> for artwork, and finally <span className='font-bold'>unity</span> <span className='inline-block align-text-bottom'><img className='h-4 rounded' src='/skills/unity.png'></img></span> for game design.
